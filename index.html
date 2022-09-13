@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+</head>
+
+<body>
+  <section class="main">
+    <section class="section_text">
+      <h1>Learn to code by watching others</h1>
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+        but understanding how developers think is invaluable.</p>
+    </section>
+    <section class="input_section">
+      <div class="above_inputs">
+        <p><b>Try it free 7 days</b> then $20/mo. thereafter</p>
+      </div>
+      <form autocomplete="off">
+        <div class="singleInput_wrapper">
+          <input id="firstName" type="text" placeholder=" ">
+          <label for="firstName">First Name</label>
+          <img src="images/icon-error.svg" alt="Error">
+          <span>First Name cannot be empty</span>
+        </div>
+        <div class="singleInput_wrapper">
+          <input id="lastName" type="text" placeholder=" ">
+          <label for="lastName">Last Name</label>
+          <img src="images/icon-error.svg" alt="Error">
+          <span>Last Name cannot be empty</span>
+        </div>
+        <div class="singleInput_wrapper">
+          <input id="email" type="text" placeholder=" ">
+          <label for="email">Email Address</label>
+          <img src="images/icon-error.svg" alt="Error">
+          <span>Looks like this is not an email</span>
+        </div>
+        <div class="singleInput_wrapper">
+          <input id="password" type="password" placeholder=" ">
+          <label for="password">Password</label>
+          <img src="images/icon-error.svg" alt="Error">
+          <span>Password cannot be empty</span>
+        </div>
+
+        <input class="submit_input" type="submit" value="CLAIM YOUR FREE TRAIL">
+        <div class="terms_wrapper">
+          <span>By clicking the button, you are agreeing to our <a href="#">Terms and
+              Services</a></span>
+        </div>
+      </form>
+    </section>
+  </section>
+  <!-- <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+</body>
+
+</html>
