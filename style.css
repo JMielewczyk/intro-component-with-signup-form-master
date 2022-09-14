@@ -19,7 +19,6 @@
 
 body, .main, .section_text, .input_section , .above_inputs, form {
     display: flex;
-    background-color: hsl(0, 100%, 74%) ;
 }
 
 body {
@@ -28,6 +27,7 @@ body {
     width: 100vw;
     background-image: url(images/bg-intro-mobile.png);
     overflow-x: hidden;
+    background-color: hsl(0, 100%, 74%);
 }
 
 .main {
@@ -67,6 +67,7 @@ body {
     background-color: var(--color-blue);
     border-radius: 8px;
     padding: 0 50px;
+    box-shadow: 0 7px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .above_inputs p {
@@ -80,6 +81,183 @@ form {
     background-color: white;
     padding: 10px 20px;
     border-radius: 8px;
+    box-shadow: 0 7px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.singleInput_wrapper {
+    position: relative;
+}
+
+.singleInput_wrapper input {
+    height: 55px;
+    width: 100%;
+    border: 1px solid var(--color-grayishBlue);
+    border-radius: 8px;
+    color: black;
+    padding: 0 20px;
+    font-size: 16px;
+}
+
+.singleInput_wrapper input.active {
+    border: none;
+    outline: 2px solid var(--color-red);
+}
+
+.singleInput_wrapper label {
+    position: absolute;
+    left: 20px;
+    top: calc(55px/2);
+    transform: translateY(-50%);
+    color: grey;
+    font-weight: 500;
+    transition: 0.3s
+}
+
+.singleInput_wrapper input:focus + label {
+    left: 100px;
+    opacity: 0;
+}
+
+.singleInput_wrapper input:not(:placeholder-shown) + label {
+    opacity: 0;
+}
+
+.singleInput_wrapper img {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: calc(55px/2);
+    transform: translateY(-50%);
+    overflow-x: hidden;
+}
+
+.singleInput_wrapper img.active {
+    display: block;
+}
+
+.singleInput_wrapper span {
+    display: block;
+    padding-right: 20px;
+    width: 100%;
+    text-align: right;
+    font-style: italic;
+    color: var(--color-red);
+    font-size: 0;
+    transition: .2s;
+}
+
+.singleInput_wrapper span.active {
+    font-size: 12px;
+}
+
+.submit_input {
+    height: 45px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--color-green);
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 0 0 hsl(154, 59%, 41%);
+}
+
+.submit_input:focus {
+    background-color: hsl(154, 59%, 61%);
+}
+
+.terms_wrapper {
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.terms_wrapper span {
+    font-size: 12px;
+    color: var(--color-grayishBlue);
+    text-align: center;
+}
+
+.terms_wrapper span a {
+    color: var(--color-red);
+    text-decoration:none;
+    font-weight: 600;
+}
+
+/* <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> */
+
+@media (min-width: 900px) {
+    body, .main, .section_text, .input_section , .above_inputs, form {
+    display: flex;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(images/bg-intro-mobile.png);
+    overflow-x: hidden;
+    background-color: hsl(0, 100%, 74%);
+}
+
+.main {
+    flex-direction: row;
+    width: 90vw;
+    height: 600px;
+    justify-content: space-around;
+}
+
+.section_text {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 45%;
+    max-width: 450px;
+    text-align: left;
+    padding: 0;
+}
+
+.section_text h1 {
+    font-size: 32px;
+    padding: 0 40px 0 0;
+}
+
+.section_text p {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.input_section {
+    flex-direction: column;
+    flex-basis: 45%;
+    max-width: 500px;
+    justify-content: space-between;
+}
+
+.above_inputs {
+    align-items: center;
+    height: 80px;
+    width: 100.1%;
+    background-color: var(--color-blue);
+    border-radius: 8px;
+    padding: 0 50px;
+    box-shadow: 0 7px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.above_inputs p {
+    text-align: center;
+}
+
+form {
+    height: calc(95% - 80px);
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 7px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .singleInput_wrapper {
@@ -130,17 +308,18 @@ form {
     text-align: right;
     font-style: italic;
     color: var(--color-red);
-    font-size: 12px;
-    transition: 1s;
+    font-size: 0;
+    transition: .2s;
 }
 
 .submit_input {
     height: 45px;
-    border-radius: 12px;
+    border-radius: 8px;
     border: none;
     background-color: var(--color-green);
     font-size: 14px;
     font-weight: 500;
+    box-shadow: 0 4px 0 0 hsl(154, 59%, 41%);
 }
 
 .terms_wrapper {
@@ -165,3 +344,6 @@ form {
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style> */
+}
+
+ 
